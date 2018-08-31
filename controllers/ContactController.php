@@ -59,7 +59,7 @@ class ContactController extends Controller
 			],
 		]);
 	
-		$this->view->registerJsFile('js/phonebook.js',  ['position' => yii\web\View::POS_END]);
+		//$this->view->registerJsFile('js/phonebook.js',  ['position' => yii\web\View::POS_END]);
         return $this->render('index', ['dataProvider' => $dataProvider]);
     }	
 	

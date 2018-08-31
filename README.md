@@ -1,5 +1,5 @@
 # phonebook
-Test phonebook app
+Test phonebook app на Yii2
 
 1. Создание БД и таблиц:
 
