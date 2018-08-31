@@ -1,10 +1,9 @@
 # phonebook
 Test phonebook app
 
-Создание БД и таблиц:
+1. Создание БД и таблиц:
 
 -- База данных: `test`
-
 >Структура таблицы `contact`
 >>CREATE TABLE `contact` (
   `id` int(11) NOT NULL,
@@ -23,3 +22,11 @@ Test phonebook app
 
 >ALTER TABLE `phone`
   ADD PRIMARY KEY (`id`);
+  
+2. Склонировать репозиторий в корень веб-сервера
+git clone https://github.com/icewickru/phonebook.git
+
+3. Подтянуть композером зависимости
+composer install
+
+4. Задать в config/db.php логин и пароль от БД
