@@ -24,9 +24,9 @@ Test phonebook app на Yii2
   ADD PRIMARY KEY (`id`);
   
 2. Склонировать репозиторий в корень веб-сервера
-git clone https://github.com/icewickru/phonebook.git
+>git clone https://github.com/icewickru/phonebook.git
 
 3. Подтянуть композером зависимости
-composer install
+>composer install
 
 4. Задать в config/db.php логин и пароль от БД
