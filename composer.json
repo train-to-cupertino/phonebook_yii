@@ -1,0 +1,13 @@
+{
+    "name": "dnetrebko/phonebook",
+    "description": "Phonebook test app [dnetrebko@yandex.ru]",
+    "type": "project",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Daniil Netrebko",
+            "email": "dnetrebko@yandex.ru"
+        }
+    ],
+    "require": {}
+}
