@@ -27,6 +27,9 @@ Test phonebook app на Yii2 + JS
 >ALTER TABLE `phone`
   ADD PRIMARY KEY (`id`);
   
+>ALTER TABLE `phone`
+  ADD CONSTRAINT `phone_ibfk_1` FOREIGN KEY (`contact_id`) REFERENCES `contact` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+  
 2. Склонировать репозиторий в корень веб-сервера
 >git clone https://github.com/icewickru/phonebook.git
 
