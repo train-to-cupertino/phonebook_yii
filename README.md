@@ -1,5 +1,8 @@
 # phonebook
-Test phonebook app на Yii2
+Test phonebook app на Yii2 + JS
+
+В отличие от https://github.com/train-to-cupertino/phonebook_v2 упор сделан на бэкенд и использование функционала фреймворка
+Список контактов использует виджет GridView
 
 1. Создание БД и таблиц:
 
