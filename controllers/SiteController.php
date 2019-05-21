@@ -56,33 +56,7 @@ class SiteController extends Controller
         ];
     }
 
-    /**
-     * Displays homepage.
-     *
-     * @return string
-     */
-	/*
-    public function actionIndex()
-    {
-		$dataProvider = new ActiveDataProvider([
 
-			'query' => Contact::find(),
-			
-			'pagination' => [
-				'pageSize' => 20,
-			],
-			
-			'sort' => [
-				'defaultOrder' => [
-					'id' => SORT_ASC,
-				]
-			],
-		]);
-	
-		$this->view->registerJsFile('js/phonebook.js',  ['position' => yii\web\View::POS_END]);
-        return $this->render('index', ['dataProvider' => $dataProvider]);
-    }
-*/
     /**
      * Login action.
      *

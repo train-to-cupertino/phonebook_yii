@@ -5,8 +5,6 @@ use Yii;
 use yii\filters\AccessControl;
 use yii\web\Controller;
 use yii\web\Response;
-//use yii\filters\VerbFilter;
-//use app\models\LoginForm;
 use app\models\Contact;
 use app\models\Phone;
 use yii\data\ActiveDataProvider;
@@ -40,7 +38,7 @@ class ContactController extends Controller
     /**
      * Displays phonebook list.
      *
-     * @return string
+     * @return string Rendering result
      */
     public function actionIndex()
     {
@@ -59,7 +57,6 @@ class ContactController extends Controller
 			],
 		]);
 	
-		//$this->view->registerJsFile('js/phonebook.js',  ['position' => yii\web\View::POS_END]);
         return $this->render('index', ['dataProvider' => $dataProvider]);
     }	
 	
@@ -67,7 +64,7 @@ class ContactController extends Controller
     /**
      * Add contact
      *
-     * @return string
+     * @return string Rendering result
      */
     public function actionAdd()
     {
@@ -90,6 +87,11 @@ class ContactController extends Controller
     }
 	
 	
+	/**
+	 * Edit contact data
+	 *
+	 * @return string Rendering result
+	 */
     public function actionUpdate($id)
     {
 		//echo $id;
@@ -111,6 +113,11 @@ class ContactController extends Controller
     }	
 	
 	
+    /**
+     * Add new phone to contact
+     *
+     * @return string Rendering result
+     */
 	public function actionAddphone() {
 		$request = Yii::$app->request;
 		
@@ -126,6 +133,12 @@ class ContactController extends Controller
 		return $this->render('add_phone');
 	}
 	
+	
+    /**
+     * Delete contact phone 
+     *
+     * @return string Rendering result
+     */	
 	public function actionDeletephone($id) {
 		if ($id) {
 			$model = Phone::find()->where(['id' => $id])->limit(1)->one();
@@ -135,6 +148,12 @@ class ContactController extends Controller
 		return $this->redirect(['contact/index']);
 	}
 	
+	
+    /**
+     * Delete contact 
+     *
+     * @return string Rendering result
+     */		
 	public function actionDelete($id) {
 		if ($id) {
 			$model = Contact::find()->where(['id' => $id])->limit(1)->one();
@@ -145,18 +164,26 @@ class ContactController extends Controller
 	}	
 	
 	
+    /**
+     * Search contact in phonebook
+     *
+     * @return string Rendering result
+     */		
 	public function actionSearch() {
 		$this->view->registerJsFile('/js/search.js',  ['position' => yii\web\View::POS_END]);
 		return $this->render('search');
 	}
 	
 	
+    /**
+     * AJAX contact search result
+     *
+     * @return string Rendering result
+     */		
 	public function actionAjaxsearchresult() {
 		$req = Yii::$app->request;
 		$name = $req->post('name');
 		$phone = $req->post('phone');
-		//$name = '';
-		//$phone = '123123123';
 		
 		if ($name && $phone) {
 			$query = Contact::find()->innerJoin('phone', 'contact.id = phone.contact_id')->where(['phone.phone' => $phone, 'contact.name' => $name]);
@@ -180,7 +207,6 @@ class ContactController extends Controller
 				]
 			],
 		]);
-	
 	
 		echo GridView::widget([
 				'dataProvider' => $dataProvider,

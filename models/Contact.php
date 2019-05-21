@@ -35,8 +35,7 @@ class Contact extends ActiveRecord
     public function rules()
     {
         return [
-            //['status', 'default', 'value' => self::STATUS_ACTIVE],
-            //['status', 'in', 'range' => [self::STATUS_ACTIVE, self::STATUS_DELETED]],
+			['name', 'string', 'length' => [1, 1023] ],
         ];
     }
 
@@ -50,11 +49,12 @@ class Contact extends ActiveRecord
     }
 	
 	
-    //функция связи модели
+	/**
+	 * Returns contact phones
+	 * @return ActiveQueryInterface Related phones
+	 */
     public function getPhones()
     {
 		return $this->hasMany(Phone::className(), ['contact_id' => 'id']);
-		//return $this->hasMany(Phone::className(), ['id' => 'contact_id']);
-		//return implode(",", $this->hasMany(Phone::className(), ['contact_id' => 'id']));
     }	
 }

@@ -3,17 +3,7 @@ use yii\grid\GridView;
 use yii\helpers\ArrayHelper;
 use app\models\Contact;
 use app\models\Phone;
-/*
 
-$contact = Contact::find()->where(['id' => 3])->limit(1)->one();
-//var_dump($contact->phones);
-$arr_data = implode(",", ArrayHelper::map($contact->phones, 'id', 'phone'));
-var_dump($arr_data);
-//echo $arr_data;
-
-
-return;
-*/
 $this->title = 'Phonebook';
 ?>
 <div class="site-index">
